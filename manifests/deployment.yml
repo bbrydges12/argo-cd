@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: bbrydgesargocd 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bbrydgesargocd
+  template:
+    metadata:
+      labels:
+        app: bbrydgesargocd 
+    spec:
+      containers:
+        - name: bbrydgesargocd 
+          image: akscontainerregistrybb1.azurecr.io/bbrydgesargocd
+          ports:
+          - containerPort: 8081
